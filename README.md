@@ -154,11 +154,19 @@ bottomsi(["f", "e", "d", "i", "g", "c", "h", "a", "b", "j"], [0, 2, 4, 6], 2) //
 
 <a href="#sort" name="sort">#</a> <b>sort</b>(<i>values</i>, <i>order</i> = [ascending](#ascending)) [<>](https://github.com/observablehq/array/blob/master/src/sort.js "Source")
 
-…
+Returns the indexes of the specified *values* array sorted according to the specified *order* comparator and array of *values*.
+
+```js
+sort(["f", "e", "d", "i", "g", "c", "h", "a", "b", "j"]) // [7, 8, 5, 2, 1, 0, 4, 6, 3, 9]
+```
 
 <a href="#sorti" name="sorti">#</a> <b>sorti</b>(<i>values</i>, <i>index</i>, <i>order</i> = [ascending](#ascending)) [<>](https://github.com/observablehq/array/blob/master/src/sorti.js "Source")
 
-…
+Returns a copy of the specified *index* array sorted according to the specified *order* comparator and array of *values*.
+
+```js
+sorti(["f", "e", "d", "i", "g", "c", "h", "a", "b", "j"], [0, 2, 4, 6]) // [2, 0, 4, 6]
+```
 
 <a href="#top" name="top">#</a> <b>top</b>(<i>values</i>, <i>order</i> = [ascending](#ascending)) [<>](https://github.com/observablehq/array/blob/master/src/top.js "Source")
 
@@ -194,23 +202,21 @@ topsi(["f", "e", "d", "i", "g", "c", "h", "a", "b", "j"], [0, 2, 4, 6], 2) // [6
 
 ### Arranging
 
-<a href="#range" name="range">#</a> <b>range</b>(<i>start</i>[, <i>stop</i>[, <i>step</i>]]) [<>](https://github.com/observablehq/array/blob/master/src/range.js "Source")
+<a href="#range" name="range">#</a> <b>range</b>([<i>start</i>, ]<i>stop</i>[, <i>step</i>]]) [<>](https://github.com/observablehq/array/blob/master/src/range.js "Source")
 
-…
+Returns an array of integers starting at the specified inclusive *start* value and stopping before the specified exclusive *stop* value. If a *start* value is not specified, it defaults to zero; if a *step* value is not specified, it defaults to 1.
 
 <a href="#reverse" name="reverse">#</a> <b>reverse</b>(<i>values</i>) [<>](https://github.com/observablehq/array/blob/master/src/reverse.js "Source")
 
-…
+Returns a reversed copy of the specified *values* array.
 
 <a href="#shuffle" name="shuffle">#</a> <b>shuffle</b>(<i>length</i>) [<>](https://github.com/observablehq/array/blob/master/src/shuffle.js "Source")
 
-…
+Returns an array of integers 0 … *length* - 1 in random order.
 
 <a href="#shufflei" name="shufflei">#</a> <b>shufflei</b>(<i>index</i>) [<>](https://github.com/observablehq/array/blob/master/src/shufflei.js "Source")
 
-…
-
-### Filtering
+Returns a shuffled copy of the specified *index* array.
 
 <a href="#take" name="take">#</a> <b>take</b>(<i>values</i>, <i>index</i>) [<>](https://github.com/observablehq/array/blob/master/src/take.js "Source")
 
@@ -224,15 +230,17 @@ topsi(["f", "e", "d", "i", "g", "c", "h", "a", "b", "j"], [0, 2, 4, 6], 2) // [6
 
 …
 
+<a href="#slice" name="slice">#</a> <b>slice</b>([<i>start</i>[, <i>stop</i>]]) [<>](https://github.com/observablehq/array/blob/master/src/slice.js "Source")
+
+…
+
+### Filtering
+
 <a href="#filter" name="filter">#</a> <b>filter</b>(<i>values</i>, <i>test</i>) [<>](https://github.com/observablehq/array/blob/master/src/filter.js "Source")
 
 …
 
 <a href="#filteri" name="filteri">#</a> <b>filteri</b>(<i>values</i>, <i>index</i>, <i>test</i>) [<>](https://github.com/observablehq/array/blob/master/src/filteri.js "Source")
-
-…
-
-<a href="#slice" name="slice">#</a> <b>slice</b>([<i>start</i>[, <i>stop</i>]]) [<>](https://github.com/observablehq/array/blob/master/src/slice.js "Source")
 
 …
 
