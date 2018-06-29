@@ -1,6 +1,6 @@
 # @observablehq/array
 
-This library provides methods for operating on columnar data (parallel arrays). Most operations involve computing an index—a sequence of integers with each integer *i* in [0, *length* - 1]—and then using the index to [take](#take) ordered subsets of the desired columns.
+This library provides methods for operating on columnar data (parallel arrays). Most operations involve computing an index—an array of integers, each in [0, *length* - 1]—and then using the index to derive new columns.
 
 https://beta.observablehq.com/@mbostock/manipulating-flat-arrays
 
@@ -10,15 +10,51 @@ https://beta.observablehq.com/@mbostock/manipulating-flat-arrays
 
 <a href="#take" name="take">#</a> <b>take</b>(<i>values</i>, <i>index</i>) [<>](https://github.com/observablehq/array/blob/master/src/take.js "Source")
 
-…
+Returns a new array of elements from the specified *values* array according to the specified *index* array. The returned array is the same type as the specified *values* array.
+
+```js
+take(["a", "b", "c", "d", "e", "f"], [0, 2, 0, 1]) // ["a", "c", "a", "b"]
+```
 
 <a href="#taker" name="taker">#</a> <b>taker</b>(<i>index</i>) [<>](https://github.com/observablehq/array/blob/master/src/taker.js "Source")
 
-…
+Returns a [take](#take)-like function that, when passed an array of *values*, returns a new array of elements from the specified *values* array according to the specified *index* array. The returned array is the same type as the specified *values* array.
+
+```js
+taker([0, 2, 0, 1])(["a", "b", "c", "d", "e", "f"]) // ["a", "c", "a", "b"]
+```
+
+This method is often used to take multiple arrays simultaneously using [*array*.map](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array/map).
+
+```js
+letter = ["a", "b", "c", "d", "e", "f", "g"]
+```
+```js
+name = ["Ay", "Bee", "Cee", "Dee", "Ee", "Ef", "Gee"]
+```
+```js
+[letter, name].map(taker([2, 1, 0])) // [["c", "b", "a"], ["Cee", "Bee", "Ay"]]
+```
 
 <a href="#get" name="get">#</a> <b>get</b>(<i>i</i>) [<>](https://github.com/observablehq/array/blob/master/src/get.js "Source")
 
-…
+Returns a [take](#take)-like function that, when passed an array of *values*, returns the element from the specified *values* array with the specified index *i*.
+
+```js
+get(2)(["a", "b", "c", "d", "e", "f"]) // "c"
+```
+
+This method is often used to get from multiple arrays simultaneously using [*array*.map](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array/map).
+
+```js
+letter = ["a", "b", "c", "d", "e", "f", "g"]
+```
+```js
+name = ["Ay", "Bee", "Cee", "Dee", "Ee", "Ef", "Gee"]
+```
+```js
+[letter, name].map(get(2)) // ["c", "Cee"]
+```
 
 ### Summarizing
 
