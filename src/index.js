@@ -10,6 +10,7 @@ export {default as filter} from "./filter.js";
 export {default as filteri} from "./filteri.js";
 export {default as get} from "./get.js";
 export {default as group} from "./group.js";
+export {default as groupi} from "./groupi.js";
 export {default as identity} from "./identity.js";
 export {default as max} from "./max.js";
 export {default as maxi} from "./maxi.js";

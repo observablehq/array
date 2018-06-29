@@ -329,6 +329,29 @@ group(name, d => d.length, i => take(letter, i)) // {2 => ["a", "e", "f"], 3 => 
 group(name, d => d.length, i => i.length) // {2 => 3, 3 => 4}
 ```
 
+<a href="#groupi" name="groupi">#</a> <b>groupi</b>(<i>values</i>, <i>index</i>, <i>key</i> = [identity](#identity)[, <i>value</i>]) [<>](https://github.com/observablehq/array/blob/master/src/groupi.js "Source")
+
+Returns a new Map where the keys of the map are computed by applying the specified *key* function to each element in the specified *values* array present in the specified *index* array.
+
+```js
+name = ["Ay", "Bee", "Cee", "Dee", "Ee", "Ef", "Gee"]
+```
+```js
+groupi(name, [0, 1, 2], d => d.length) // {2 => ["Ay"], 3 => ["Bee", "Cee"]}
+```
+
+If a *value* function is specified, it is invoked with the array of indexes for each entry in the returned map, and the returned map’s value is replaced by whatever the *value* function returns.
+
+```js
+letter = ["a", "b", "c", "d", "e", "f", "g"]
+```
+```js
+groupi(name, [0, 1, 2], d => d.length, i => take(letter, i)) // {2 => ["a"], 3 => ["b", "c"]}
+```
+```js
+groupi(name, [0, 1, 2], d => d.length, i => i.length) // {2 => 1, 3 => 2}
+```
+
 ### Comparing
 
 These functions are useful as the *order* argument to [sort](#sort), [top](#top) and [bottom](#bottom).
