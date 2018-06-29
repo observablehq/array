@@ -1,0 +1,4 @@
+*.sublime-*
+.DS_Store
+dist/*.zip
+test/

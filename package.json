@@ -1,0 +1,31 @@
+{
+  "name": "@observablehq/array",
+  "version": "0.0.0",
+  "description": "Manipulate arrays.",
+  "keywords": [
+    "array",
+    "columnar"
+  ],
+  "homepage": "https://github.com/observablehq/array",
+  "repository": "https://github.com/observablehq/array",
+  "license": "ISC",
+  "author": {
+    "name": "Observable, Inc.",
+    "url": "https://observablehq.com"
+  },
+  "main": "dist/array.cjs.js",
+  "unpkg": "dist/array.umd.js",
+  "module": "dist/array.es.js",
+  "scripts": {
+    "build": "rm -rf dist && mkdir dist && rollup -c",
+    "prepublishOnly": "yarn build && yarn test",
+    "test": "tape -r esm 'test/**/*-test.js'"
+  },
+  "devDependencies": {
+    "esm": "^3.0.55",
+    "rollup": "^0.62.0",
+    "rollup-plugin-terser": "^1.0.1",
+    "tape": "^4.9.1",
+    "tape-await": "^0.1.1"
+  }
+}
