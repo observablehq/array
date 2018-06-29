@@ -1,6 +1,6 @@
 # @observablehq/array
 
-This library provides methods for operating on columnar data (parallel arrays). Most operations involve computing an index (a sequence of integers with each integer *i* in [0, *length* - 1]), and then using the index to derive (to [take](#take)) reordered or filtered copies of the desired columns.
+This library provides methods for operating on columnar data (parallel arrays). Most operations involve computing an index—a sequence of integers with each integer *i* in [0, *length* - 1]—and then using the index to [take](#take) ordered subsets of the desired columns.
 
 https://beta.observablehq.com/@mbostock/manipulating-flat-arrays
 
