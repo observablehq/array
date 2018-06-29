@@ -3,13 +3,17 @@ import topi from "../src/topi.js";
 import descending from "../src/descending.js";
 
 tape("topi(values, index) returns the expected values", test => {
-  test.deepEqual(topi([5, 4, 3, 8, 6, 2, 7, 0, 1, 9], [5, 7, 6, 0, 3]), [3, 6, 0, 5, 7]);
+  test.equal(topi([5, 4, 3, 9, 6, 2, 7, 0, 1, 8], [0, 2, 4, 6, 8]), 6);
+  test.equal(topi([5, 4, 3, 9, NaN, 2, NaN, -1, 1, 8], [0, 2, 4, 6, 8]), 0);
+  test.equal(topi([5, 4, 3, 9,, 2,, 0, 1, 8], [0, 2, 4, 6, 8]), 0);
 });
 
-tape("topi(values, index, k) returns the expected values", test => {
-  test.deepEqual(topi([5, 4, 3, 8, 6, 2, 7, 0, 1, 9], [5, 7, 6, 0, 3], 3), [3, 6, 0]);
+tape("topi(values, index, order) returns the expected values", test => {
+  test.equal(topi([5, 4, 3, 9, 6, 2, 7, 0, 1, 8], [0, 2, 4, 6, 8], descending), 8);
+  test.equal(topi([5, 4, 3, 9, NaN, 2, NaN, -1, 1, 8], [0, 2, 4, 6, 8], descending), 8);
+  test.equal(topi([5, 4, 3, 9,, 2,, 0, 1, 8], [0, 2, 4, 6, 8], descending), 8);
 });
 
-tape("topi(values, index, k, order) returns the expected values", test => {
-  test.deepEqual(topi([5, 4, 3, 8, 6, 2, 7, 0, 1, 9], [5, 7, 6, 0, 3], 3, descending), [7, 5, 0]);
+tape("topi(values, index) ignores leading NaN", test => {
+  test.equal(topi([5, 4, 3, 9, NaN, 2, NaN, -1, 1, 8], [4, 6]), -1);
 });

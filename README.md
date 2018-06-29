@@ -104,36 +104,36 @@ sumi([0, 1, 4, 8, NaN, 2], [0, 1, 2, 3]) // 13
 
 ### Sorting
 
-<a href="#bottom" name="bottom">#</a> <b>bottom</b>(<i>values</i>, <i>k</i> = 5, <i>order</i> = [ascending](#ascending)) [<>](https://github.com/observablehq/array/blob/master/src/bottom.js "Source")
-
-Returns an array of the *k* indexes of the specified *values* array with the corresponding least values according to the specified *order* comparator.
-
-```js
-bottom(["f", "e", "d", "i", "g", "c", "h", "a", "b", "j"], 3) // [7, 8, 5]
-```
-
-<a href="#bottomi" name="bottomi">#</a> <b>bottomi</b>(<i>values</i>, <i>index</i>, <i>k</i> = 5, <i>order</i> = [ascending](#ascending)) [<>](https://github.com/observablehq/array/blob/master/src/bottomi.js "Source")
-
-Returns an array of the *k* indexes in the specified *index* array with the corresponding least values in the specified *values* array according to the specified *order* comparator. Equivalent to [bottom](#bottom)([take](#take)(*values*, *index*), *k*, *order*).
-
-```js
-bottomi(["f", "e", "d", "i", "g", "c", "h", "a", "b", "j"], [0, 2, 4, 6], 2) // [2, 0]
-```
-
-<a href="#bottom1" name="bottom1">#</a> <b>bottom1</b>(<i>values</i>, <i>order</i> = [ascending](#ascending)) [<>](https://github.com/observablehq/array/blob/master/src/bottom1.js "Source")
+<a href="#bottom" name="bottom">#</a> <b>bottom</b>(<i>values</i>, <i>order</i> = [ascending](#ascending)) [<>](https://github.com/observablehq/array/blob/master/src/bottom.js "Source")
 
 Returns the index of the specified *values* array with the corresponding least value according to the specified *order* comparator.
 
 ```js
-bottom1(["f", "e", "d", "i", "g", "c", "h", "a", "b", "j"]) // 7
+bottom(["f", "e", "d", "i", "g", "c", "h", "a", "b", "j"]) // 7
 ```
 
-<a href="#bottom1i" name="bottom1i">#</a> <b>bottom1i</b>(<i>values</i>, <i>index</i>) [<>](https://github.com/observablehq/array/blob/master/src/bottom1i.js "Source")
+<a href="#bottomi" name="bottomi">#</a> <b>bottomi</b>(<i>values</i>, <i>index</i>) [<>](https://github.com/observablehq/array/blob/master/src/bottomi.js "Source")
 
-Returns the index in the specified *index* array with the corresponding least value in the specified *values* array according to the specified *order* comparator. Equivalent to [bottom1](#bottom1)([take](#take)(*values*, *index*), *order*).
+Returns the index in the specified *index* array with the corresponding least value in the specified *values* array according to the specified *order* comparator. Equivalent to [bottom](#bottom)([take](#take)(*values*, *index*), *order*).
 
 ```js
-bottom1i(["f", "e", "d", "i", "g", "c", "h", "a", "b", "j"], [0, 2, 4, 6]) // 2
+bottomi(["f", "e", "d", "i", "g", "c", "h", "a", "b", "j"], [0, 2, 4, 6]) // 2
+```
+
+<a href="#bottoms" name="bottoms">#</a> <b>bottoms</b>(<i>values</i>, <i>k</i> = 5, <i>order</i> = [ascending](#ascending)) [<>](https://github.com/observablehq/array/blob/master/src/bottoms.js "Source")
+
+Returns an array of the *k* indexes of the specified *values* array with the corresponding least values according to the specified *order* comparator.
+
+```js
+bottoms(["f", "e", "d", "i", "g", "c", "h", "a", "b", "j"], 3) // [7, 8, 5]
+```
+
+<a href="#bottomsi" name="bottomsi">#</a> <b>bottomsi</b>(<i>values</i>, <i>index</i>, <i>k</i> = 5, <i>order</i> = [ascending](#ascending)) [<>](https://github.com/observablehq/array/blob/master/src/bottomsi.js "Source")
+
+Returns an array of the *k* indexes in the specified *index* array with the corresponding least values in the specified *values* array according to the specified *order* comparator. Equivalent to [bottoms](#bottoms)([take](#take)(*values*, *index*), *k*, *order*).
+
+```js
+bottomsi(["f", "e", "d", "i", "g", "c", "h", "a", "b", "j"], [0, 2, 4, 6], 2) // [2, 0]
 ```
 
 <a href="#sort" name="sort">#</a> <b>sort</b>(<i>values</i>, <i>order</i> = [ascending](#ascending)) [<>](https://github.com/observablehq/array/blob/master/src/sort.js "Source")
@@ -144,29 +144,29 @@ bottom1i(["f", "e", "d", "i", "g", "c", "h", "a", "b", "j"], [0, 2, 4, 6]) // 2
 
 …
 
-<a href="#top" name="top">#</a> <b>top</b>(<i>values</i>, <i>k</i> = 5, <i>order</i> = [ascending](#ascending)) [<>](https://github.com/observablehq/array/blob/master/src/top.js "Source")
+<a href="#top" name="top">#</a> <b>top</b>(<i>values</i>) [<>](https://github.com/observablehq/array/blob/master/src/top.js "Source")
+
+…
+
+<a href="#topi" name="topi">#</a> <b>topi</b>(<i>values</i>, <i>index</i>) [<>](https://github.com/observablehq/array/blob/master/src/topi.js "Source")
+
+…
+
+<a href="#tops" name="tops">#</a> <b>tops</b>(<i>values</i>, <i>k</i> = 5, <i>order</i> = [ascending](#ascending)) [<>](https://github.com/observablehq/array/blob/master/src/tops.js "Source")
 
 Returns an array of the *k* indexes of the specified *values* array with the corresponding greatest values according to the specified *order* comparator.
 
 ```js
-top(["f", "e", "d", "i", "g", "c", "h", "a", "b", "j"], 3) // [9, 3, 6]
+tops(["f", "e", "d", "i", "g", "c", "h", "a", "b", "j"], 3) // [9, 3, 6]
 ```
 
-<a href="#topi" name="topi">#</a> <b>topi</b>(<i>values</i>, <i>index</i>, <i>k</i> = 5, <i>order</i> = [ascending](#ascending)) [<>](https://github.com/observablehq/array/blob/master/src/topi.js "Source")
+<a href="#topsi" name="topsi">#</a> <b>topsi</b>(<i>values</i>, <i>index</i>, <i>k</i> = 5, <i>order</i> = [ascending](#ascending)) [<>](https://github.com/observablehq/array/blob/master/src/topsi.js "Source")
 
 Returns an array of the *k* indexes in the specified *index* array with the corresponding greatest values in the specified *values* array according to the specified *order* comparator. Equivalent to [top](#top)([take](#take)(*values*, *index*), *k*, *order*).
 
 ```js
-topi(["f", "e", "d", "i", "g", "c", "h", "a", "b", "j"], [0, 2, 4, 6], 2) // [6, 4]
+topsi(["f", "e", "d", "i", "g", "c", "h", "a", "b", "j"], [0, 2, 4, 6], 2) // [6, 4]
 ```
-
-<a href="#top1" name="top1">#</a> <b>top1</b>(<i>values</i>) [<>](https://github.com/observablehq/array/blob/master/src/top1.js "Source")
-
-…
-
-<a href="#top1i" name="top1i">#</a> <b>top1i</b>(<i>values</i>, <i>index</i>) [<>](https://github.com/observablehq/array/blob/master/src/top1i.js "Source")
-
-…
 
 ### Arranging
 
