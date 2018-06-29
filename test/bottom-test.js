@@ -3,7 +3,7 @@ import bottom from "../src/bottom.js";
 import descending from "../src/descending.js";
 
 tape("bottom(values) returns the expected values", test => {
-  test.deepEqual(bottom([5, 4, 3, 8, 6, 2, 7, 0, 1, 9]), [7]);
+  test.deepEqual(bottom([5, 4, 3, 8, 6, 2, 7, 0, 1, 9]), [7, 8, 5, 2, 1]);
 });
 
 tape("bottom(values, k) returns the expected values", test => {

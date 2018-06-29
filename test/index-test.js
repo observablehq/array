@@ -5,6 +5,8 @@ tape("@observablehq/array exports the expected symbols", test => {
   test.deepEqual(Object.keys(array), [
     "ascending",
     "bottom",
+    "bottom1",
+    "bottom1i",
     "bottomi",
     "count",
     "counti",
@@ -35,6 +37,8 @@ tape("@observablehq/array exports the expected symbols", test => {
     "take",
     "taker",
     "top",
+    "top1",
+    "top1i",
     "topi"
   ]);
 });

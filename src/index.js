@@ -1,6 +1,8 @@
 export {default as ascending} from "./ascending.js";
 export {default as bottom} from "./bottom.js";
 export {default as bottomi} from "./bottomi.js";
+export {default as bottom1} from "./bottom1.js";
+export {default as bottom1i} from "./bottom1i.js";
 export {default as count} from "./count.js";
 export {default as counti} from "./counti.js";
 export {default as descending} from "./descending.js";
@@ -31,3 +33,5 @@ export {default as take} from "./take.js";
 export {default as taker} from "./taker.js";
 export {default as top} from "./top.js";
 export {default as topi} from "./topi.js";
+export {default as top1} from "./top1.js";
+export {default as top1i} from "./top1i.js";

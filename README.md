@@ -22,6 +22,22 @@ Returns the number of numeric values in the subset of the specified *values* arr
 counti([1, "N/A", 2, NaN, 3], [0, 1, 2]) // 2
 ```
 
+<a href="#max" name="max">#</a> <b>max</b>(<i>values</i>) [<>](https://github.com/observablehq/array/blob/master/src/max.js "Source")
+
+…
+
+<a href="#maxi" name="maxi">#</a> <b>maxi</b>(<i>values</i>, <i>index</i>) [<>](https://github.com/observablehq/array/blob/master/src/maxi.js "Source")
+
+…
+
+<a href="#min" name="min">#</a> <b>min</b>(<i>values</i>) [<>](https://github.com/observablehq/array/blob/master/src/min.js "Source")
+
+…
+
+<a href="#mini" name="mini">#</a> <b>mini</b>(<i>values</i>, <i>index</i>) [<>](https://github.com/observablehq/array/blob/master/src/mini.js "Source")
+
+…
+
 <a href="#mean" name="mean">#</a> <b>mean</b>(<i>values</i>) [<>](https://github.com/observablehq/array/blob/master/src/mean.js "Source")
 
 Returns the arithmetic mean of the specified *values* array.
@@ -88,7 +104,7 @@ sumi([0, 1, 4, 8, NaN, 2], [0, 1, 2, 3]) // 13
 
 ### Sorting
 
-<a href="#bottom" name="bottom">#</a> <b>bottom</b>(<i>values</i>, <i>k</i> = 1, <i>order</i> = [ascending](#ascending)) [<>](https://github.com/observablehq/array/blob/master/src/bottom.js "Source")
+<a href="#bottom" name="bottom">#</a> <b>bottom</b>(<i>values</i>, <i>k</i> = 5, <i>order</i> = [ascending](#ascending)) [<>](https://github.com/observablehq/array/blob/master/src/bottom.js "Source")
 
 Returns an array of the *k* indexes of the specified *values* array with the corresponding least values according to the specified *order* comparator.
 
@@ -96,7 +112,7 @@ Returns an array of the *k* indexes of the specified *values* array with the cor
 bottom(["f", "e", "d", "i", "g", "c", "h", "a", "b", "j"], 3) // [7, 8, 5]
 ```
 
-<a href="#bottomi" name="bottomi">#</a> <b>bottomi</b>(<i>values</i>, <i>index</i>, <i>k</i> = 1, <i>order</i> = [ascending](#ascending)) [<>](https://github.com/observablehq/array/blob/master/src/bottomi.js "Source")
+<a href="#bottomi" name="bottomi">#</a> <b>bottomi</b>(<i>values</i>, <i>index</i>, <i>k</i> = 5, <i>order</i> = [ascending](#ascending)) [<>](https://github.com/observablehq/array/blob/master/src/bottomi.js "Source")
 
 Returns an array of the *k* indexes in the specified *index* array with the corresponding least values in the specified *values* array according to the specified *order* comparator. Equivalent to [bottom](#bottom)([take](#take)(*values*, *index*), *k*, *order*).
 
@@ -104,21 +120,21 @@ Returns an array of the *k* indexes in the specified *index* array with the corr
 bottomi(["f", "e", "d", "i", "g", "c", "h", "a", "b", "j"], [0, 2, 4, 6], 2) // [2, 0]
 ```
 
-<a href="#max" name="max">#</a> <b>max</b>(<i>values</i>) [<>](https://github.com/observablehq/array/blob/master/src/max.js "Source")
+<a href="#bottom1" name="bottom1">#</a> <b>bottom1</b>(<i>values</i>, <i>order</i> = [ascending](#ascending)) [<>](https://github.com/observablehq/array/blob/master/src/bottom1.js "Source")
 
-… TODO This returns an index; what about the maximum value?
+Returns the index of the specified *values* array with the corresponding least value according to the specified *order* comparator.
 
-<a href="#maxi" name="maxi">#</a> <b>maxi</b>(<i>values</i>, <i>index</i>) [<>](https://github.com/observablehq/array/blob/master/src/maxi.js "Source")
+```js
+bottom1(["f", "e", "d", "i", "g", "c", "h", "a", "b", "j"]) // 7
+```
 
-… TODO This returns an index; what about the maximum value?
+<a href="#bottom1i" name="bottom1i">#</a> <b>bottom1i</b>(<i>values</i>, <i>index</i>) [<>](https://github.com/observablehq/array/blob/master/src/bottom1i.js "Source")
 
-<a href="#min" name="min">#</a> <b>min</b>(<i>values</i>) [<>](https://github.com/observablehq/array/blob/master/src/min.js "Source")
+Returns the index in the specified *index* array with the corresponding least value in the specified *values* array according to the specified *order* comparator. Equivalent to [bottom1](#bottom1)([take](#take)(*values*, *index*), *order*).
 
-… TODO This returns an index; what about the minimum value?
-
-<a href="#mini" name="mini">#</a> <b>mini</b>(<i>values</i>, <i>index</i>) [<>](https://github.com/observablehq/array/blob/master/src/mini.js "Source")
-
-… TODO This returns an index; what about the minimum value?
+```js
+bottom1i(["f", "e", "d", "i", "g", "c", "h", "a", "b", "j"], [0, 2, 4, 6]) // 2
+```
 
 <a href="#sort" name="sort">#</a> <b>sort</b>(<i>values</i>, <i>order</i> = [ascending](#ascending)) [<>](https://github.com/observablehq/array/blob/master/src/sort.js "Source")
 
@@ -128,7 +144,7 @@ bottomi(["f", "e", "d", "i", "g", "c", "h", "a", "b", "j"], [0, 2, 4, 6], 2) // 
 
 …
 
-<a href="#top" name="top">#</a> <b>top</b>(<i>values</i>, <i>k</i> = 1, <i>order</i> = [ascending](#ascending)) [<>](https://github.com/observablehq/array/blob/master/src/top.js "Source")
+<a href="#top" name="top">#</a> <b>top</b>(<i>values</i>, <i>k</i> = 5, <i>order</i> = [ascending](#ascending)) [<>](https://github.com/observablehq/array/blob/master/src/top.js "Source")
 
 Returns an array of the *k* indexes of the specified *values* array with the corresponding greatest values according to the specified *order* comparator.
 
@@ -136,13 +152,21 @@ Returns an array of the *k* indexes of the specified *values* array with the cor
 top(["f", "e", "d", "i", "g", "c", "h", "a", "b", "j"], 3) // [9, 3, 6]
 ```
 
-<a href="#topi" name="topi">#</a> <b>topi</b>(<i>values</i>, <i>index</i>, <i>k</i> = 1, <i>order</i> = [ascending](#ascending)) [<>](https://github.com/observablehq/array/blob/master/src/topi.js "Source")
+<a href="#topi" name="topi">#</a> <b>topi</b>(<i>values</i>, <i>index</i>, <i>k</i> = 5, <i>order</i> = [ascending](#ascending)) [<>](https://github.com/observablehq/array/blob/master/src/topi.js "Source")
 
 Returns an array of the *k* indexes in the specified *index* array with the corresponding greatest values in the specified *values* array according to the specified *order* comparator. Equivalent to [top](#top)([take](#take)(*values*, *index*), *k*, *order*).
 
 ```js
 topi(["f", "e", "d", "i", "g", "c", "h", "a", "b", "j"], [0, 2, 4, 6], 2) // [6, 4]
 ```
+
+<a href="#top1" name="top1">#</a> <b>top1</b>(<i>values</i>) [<>](https://github.com/observablehq/array/blob/master/src/top1.js "Source")
+
+…
+
+<a href="#top1i" name="top1i">#</a> <b>top1i</b>(<i>values</i>, <i>index</i>) [<>](https://github.com/observablehq/array/blob/master/src/top1i.js "Source")
+
+…
 
 ### Arranging
 
