@@ -326,6 +326,9 @@ If a *value* function is specified, it is invoked for each entry in the returned
 ```js
 group(name.map(d => d.length), i => take(name, i)) // {2 => ["Ay", "Ee", "Ef"], 3 => ["Bee", "Cee", "Dee", "Gee"]}
 ```
+```js
+group(name.map(d => d.length), i => i.length) // {2 => 3, 3 => 4}
+```
 
 ### Comparing
 
