@@ -56,6 +56,26 @@ name = ["Ay", "Bee", "Cee", "Dee", "Ee", "Ef", "Gee"]
 [letter, name].map(get(2)) // ["c", "Cee"]
 ```
 
+<a href="#slice" name="slice">#</a> <b>slice</b>([<i>start</i>[, <i>stop</i>]]) [<>](https://github.com/observablehq/array/blob/master/src/slice.js "Source")
+
+Returns a function that when passed an array, returns a slice of the array according to the specified *start* and *stop* index. The returned function is equivalent to calling [*array*.slice](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array/slice).
+
+```js
+slice(0, 3)(["Ay", "Bee", "Cee", "Dee", "Ee", "Ef", "Gee"]) // ["Ay", "Bee", "Cee"]
+```
+
+This method is often used to take multiple arrays simultaneously using [*array*.map](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array/map).
+
+```js
+letter = ["a", "b", "c", "d", "e", "f", "g"]
+```
+```js
+name = ["Ay", "Bee", "Cee", "Dee", "Ee", "Ef", "Gee"]
+```
+```js
+[letter, name].map(slice(0, 3)) // [["a", "b", "c"], ["Ay", "Bee", "Cee"]]
+```
+
 ### Summarizing
 
 <a href="#count" name="count">#</a> <b>count</b>(<i>values</i>) [<>](https://github.com/observablehq/array/blob/master/src/count.js "Source")
@@ -260,7 +280,7 @@ Returns an array of integers starting at the specified inclusive *start* value a
 
 <a href="#reverse" name="reverse">#</a> <b>reverse</b>(<i>values</i>) [<>](https://github.com/observablehq/array/blob/master/src/reverse.js "Source")
 
-Returns a reversed copy of the specified *values* array.
+Returns a reversed copy of the specified *values* array. Like [*array*.reverse](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array/slice), but returns a copy.
 
 <a href="#shuffle" name="shuffle">#</a> <b>shuffle</b>(<i>length</i>) [<>](https://github.com/observablehq/array/blob/master/src/shuffle.js "Source")
 
@@ -274,15 +294,19 @@ Returns a shuffled copy of the specified *index* array.
 
 <a href="#filter" name="filter">#</a> <b>filter</b>(<i>values</i>, <i>test</i>) [<>](https://github.com/observablehq/array/blob/master/src/filter.js "Source")
 
-…
+Returns an array of indexes from the specified *values* array for which the specified *test* function returned truthy. The *test* function is passed a value from the *values* array, the corresponding index, and the *values* array itself.
+
+```js
+filter(["Ay", "Bee", "Cee", "Dee", "Ee", "Ef", "Gee"], d => d.length === 2) // [0, 4, 5]
+```
 
 <a href="#filteri" name="filteri">#</a> <b>filteri</b>(<i>values</i>, <i>index</i>, <i>test</i>) [<>](https://github.com/observablehq/array/blob/master/src/filteri.js "Source")
 
-…
+Returns the subset of the specified *index* for which the specified *test* function returned truthy. The *test* function is passed a value from the *values* array, the corresponding index, and the *values* array itself.
 
-<a href="#slice" name="slice">#</a> <b>slice</b>([<i>start</i>[, <i>stop</i>]]) [<>](https://github.com/observablehq/array/blob/master/src/slice.js "Source")
-
-…
+```js
+filteri(["Ay", "Bee", "Cee", "Dee", "Ee", "Ef", "Gee"], [0, 1, 2, 3], d => d.length === 2) // [0]
+```
 
 ### Grouping
 
