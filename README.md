@@ -27,46 +27,82 @@ counti([1, "N/A", 2, NaN, 3], [0, 1, 2]) // 2
 Returns the arithmetic mean (average) of the specified *values* array.
 
 ```js
-mean([0, 1, 4, 8, 2])
+mean([0, 1, 4, 8, NaN, 2]) // 3
 ```
 
 <a href="#meani" name="meani">#</a> <b>meani</b>(<i>values</i>, <i>index</i>) [<>](https://github.com/observablehq/array/blob/master/src/meani.js "Source")
 
-…
+Returns the arithmetic mean (average) of the subset of the specified *values* array in the specified *index* array. Equivalent to [mean](#mean)([take](#take)(*values*, *index*)).
+
+```js
+meani([NaN, 1, 3, 8, 3], [0, 1, 2, 3]) // 4
+```
 
 <a href="#median" name="median">#</a> <b>median</b>(<i>values</i>) [<>](https://github.com/observablehq/array/blob/master/src/median.js "Source")
 
-…
+Returns the median of the specified *values* array. Equivalent to [quantile](#quantile)(*values*, 0.5).
+
+```js
+median([0, 1, 4, 8, NaN, 2]) // 2
+```
 
 <a href="#mediani" name="mediani">#</a> <b>mediani</b>(<i>values</i>, <i>index</i>) [<>](https://github.com/observablehq/array/blob/master/src/mediani.js "Source")
 
-…
+Returns the median of the subset of the specified *values* array in the specified *index* array. Equivalent to [quantile](#quantile)([take](#take)(*values*, *index*), 0.5).
+
+```js
+mediani([0, 1, 4, 8, NaN, 2], [0, 1, 2, 3]) // 2.5
+```
 
 <a href="#quantile" name="quantile">#</a> <b>quantile</b>(<i>values</i>, <i>p</i>) [<>](https://github.com/observablehq/array/blob/master/src/quantile.js "Source")
 
-…
+Returns the *p*-quantile of the specified *values* array with the specified *p* using the [R-7 method](https://en.wikipedia.org/wiki/Quantile#Quantiles_of_a_population).
+
+```js
+quantile([0, 1, 4, 8, NaN, 2], 0.5) // 2
+```
 
 <a href="#quantilei" name="quantilei">#</a> <b>quantilei</b>(<i>values</i>, <i>index</i>, <i>p</i>) [<>](https://github.com/observablehq/array/blob/master/src/quantilei.js "Source")
 
-…
+Returns the *p*-quantile of the subset of the specified *values* array in the specified *index* array with the specified *p* using the [R-7 method](https://en.wikipedia.org/wiki/Quantile#Quantiles_of_a_population). Equivalent to [quantile](#quantile)([take](#take)(*values*, *index*), *p*).
+
+```js
+quantilei([0, 1, 4, 8, NaN, 2], [0, 1, 2, 3], 0.5) // 2
+```
 
 <a href="#sum" name="sum">#</a> <b>sum</b>(<i>values</i>) [<>](https://github.com/observablehq/array/blob/master/src/sum.js "Source")
 
-…
+Returns the sum of the specified *values* array.
+
+```js
+sum([0, 1, 4, 8, NaN, 2]) // 15
+```
 
 <a href="#sumi" name="sumi">#</a> <b>sumi</b>(<i>values</i>, <i>index</i>) [<>](https://github.com/observablehq/array/blob/master/src/sumi.js "Source")
 
-…
+Returns the sum of the subset of the specified *values* array in the specified *index* array. Equivalent to [sum](#sum)([take](#take)(*values*, *index*)).
+
+```js
+sum([0, 1, 4, 8, NaN, 2]) // 15
+```
 
 ### Sorting
 
 <a href="#bottom" name="bottom">#</a> <b>bottom</b>(<i>values</i>, <i>k</i> = 1, <i>order</i> = [ascending](#ascending)) [<>](https://github.com/observablehq/array/blob/master/src/bottom.js "Source")
 
-…
+Returns an array of the *k* indexes of the specified *values* array with the least values according to the specified *order* comparator.
+
+```js
+bottom(["f", "e", "d", "i", "g", "c", "h", "a", "b", "j"], 3) // [7, 8, 5]
+```
 
 <a href="#bottomi" name="bottomi">#</a> <b>bottomi</b>(<i>values</i>, <i>index</i>, <i>k</i> = 1, <i>order</i> = [ascending](#ascending)) [<>](https://github.com/observablehq/array/blob/master/src/bottomi.js "Source")
 
-…
+Returns an array of the *k* indexes of the subset of the specified *values* array in the specified *index* array with the least values according to the specified *order* comparator. Equivalent to [bottom](#bottom)([take](#take)(*values*, *index*), *k*, *order*).
+
+```js
+bottomi(["f", "e", "d", "i", "g", "c", "h", "a", "b", "j"], [0, 2, 4, 6], 2) // [2, 0]
+```
 
 <a href="#max" name="max">#</a> <b>max</b>(<i>values</i>) [<>](https://github.com/observablehq/array/blob/master/src/max.js "Source")
 
