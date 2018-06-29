@@ -16,17 +16,19 @@ count([1, "N/A", 2, NaN, 3]) // 3
 
 <a href="#counti" name="counti">#</a> <b>counti</b>(<i>values</i>, <i>index</i>) [<>](https://github.com/observablehq/array/blob/master/src/counti.js "Source")
 
-Returns the number of numeric (not NaN) values in the subset of the *values* array specified by the *index* array.
+Returns the number of numeric (not NaN) values in the subset of the specified *values* array in the specified *index* array. Equivalent to [count](#count)([take](#take)(*values*, *index*)).
 
 ```js
 counti([1, "N/A", 2, NaN, 3], [0, 1, 2]) // 2
 ```
 
-Equivalent to [count](#count)([take](#take)(*values*, *index*)).
-
 <a href="#mean" name="mean">#</a> <b>mean</b>(<i>values</i>) [<>](https://github.com/observablehq/array/blob/master/src/mean.js "Source")
 
-…
+Returns the arithmetic mean (average) of the specified *values* array.
+
+```js
+mean([0, 1, 4, 8, 2])
+```
 
 <a href="#meani" name="meani">#</a> <b>meani</b>(<i>values</i>, <i>index</i>) [<>](https://github.com/observablehq/array/blob/master/src/meani.js "Source")
 
