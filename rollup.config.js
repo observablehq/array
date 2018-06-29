@@ -1,6 +1,7 @@
 import {terser} from "rollup-plugin-terser";
+import {version} from "./package.json";
 
-const copyright = `// @observablehq/array Copyright ${(new Date).getFullYear()} Observable, Inc.`;
+const copyright = `// @observablehq/array v${version} Copyright ${(new Date).getFullYear()} Observable, Inc.`;
 
 function config(options) {
   return {
