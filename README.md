@@ -4,6 +4,30 @@ This library provides methods for operating on columnar data represented as para
 
 https://beta.observablehq.com/@mbostock/manipulating-flat-arrays
 
+## Installing
+
+Via npm:
+
+```js
+npm install @observablehq/array
+```
+
+Via import:
+
+```html
+<script type="module">
+
+import {take} from "https://unpkg.com/@observablehq/array?module";
+
+</script>
+```
+
+Via script tag:
+
+```html
+<script src="https://unpkg.com/@observablehq/array"></script>
+```
+
 ## API Reference
 
 ### Taking
