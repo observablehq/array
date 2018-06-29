@@ -1,8 +1,24 @@
 # @observablehq/array
 
+This library provides methods for operating on columnar data (parallel arrays). Most operations involve computing an index (a sequence of integers with each integer *i* in [0, *length* - 1]), and then using the index to derive (to [take](#take)) reordered or filtered copies of the desired columns.
+
 https://beta.observablehq.com/@mbostock/manipulating-flat-arrays
 
 ## API Reference
+
+### Taking
+
+<a href="#take" name="take">#</a> <b>take</b>(<i>values</i>, <i>index</i>) [<>](https://github.com/observablehq/array/blob/master/src/take.js "Source")
+
+…
+
+<a href="#taker" name="taker">#</a> <b>taker</b>(<i>index</i>) [<>](https://github.com/observablehq/array/blob/master/src/taker.js "Source")
+
+…
+
+<a href="#get" name="get">#</a> <b>get</b>(<i>i</i>) [<>](https://github.com/observablehq/array/blob/master/src/get.js "Source")
+
+…
 
 ### Summarizing
 
@@ -218,22 +234,6 @@ Returns an array of integers 0 … *length* - 1 in random order.
 
 Returns a shuffled copy of the specified *index* array.
 
-<a href="#take" name="take">#</a> <b>take</b>(<i>values</i>, <i>index</i>) [<>](https://github.com/observablehq/array/blob/master/src/take.js "Source")
-
-…
-
-<a href="#taker" name="taker">#</a> <b>taker</b>(<i>index</i>) [<>](https://github.com/observablehq/array/blob/master/src/taker.js "Source")
-
-…
-
-<a href="#get" name="get">#</a> <b>get</b>(<i>i</i>) [<>](https://github.com/observablehq/array/blob/master/src/get.js "Source")
-
-…
-
-<a href="#slice" name="slice">#</a> <b>slice</b>([<i>start</i>[, <i>stop</i>]]) [<>](https://github.com/observablehq/array/blob/master/src/slice.js "Source")
-
-…
-
 ### Filtering
 
 <a href="#filter" name="filter">#</a> <b>filter</b>(<i>values</i>, <i>test</i>) [<>](https://github.com/observablehq/array/blob/master/src/filter.js "Source")
@@ -241,6 +241,10 @@ Returns a shuffled copy of the specified *index* array.
 …
 
 <a href="#filteri" name="filteri">#</a> <b>filteri</b>(<i>values</i>, <i>index</i>, <i>test</i>) [<>](https://github.com/observablehq/array/blob/master/src/filteri.js "Source")
+
+…
+
+<a href="#slice" name="slice">#</a> <b>slice</b>([<i>start</i>[, <i>stop</i>]]) [<>](https://github.com/observablehq/array/blob/master/src/slice.js "Source")
 
 …
 
