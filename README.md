@@ -112,7 +112,7 @@ Returns the index of the specified *values* array with the corresponding least v
 bottom(["f", "e", "d", "i", "g", "c", "h", "a", "b", "j"]) // 7
 ```
 
-<a href="#bottomi" name="bottomi">#</a> <b>bottomi</b>(<i>values</i>, <i>index</i>) [<>](https://github.com/observablehq/array/blob/master/src/bottomi.js "Source")
+<a href="#bottomi" name="bottomi">#</a> <b>bottomi</b>(<i>values</i>, <i>index</i>, <i>order</i> = [ascending](#ascending)) [<>](https://github.com/observablehq/array/blob/master/src/bottomi.js "Source")
 
 Returns the index in the specified *index* array with the corresponding least value in the specified *values* array according to the specified *order* comparator. Equivalent to [bottom](#bottom)([take](#take)(*values*, *index*), *order*).
 
@@ -144,13 +144,21 @@ bottomsi(["f", "e", "d", "i", "g", "c", "h", "a", "b", "j"], [0, 2, 4, 6], 2) //
 
 …
 
-<a href="#top" name="top">#</a> <b>top</b>(<i>values</i>) [<>](https://github.com/observablehq/array/blob/master/src/top.js "Source")
+<a href="#top" name="top">#</a> <b>top</b>(<i>values</i>, <i>order</i> = [ascending](#ascending)) [<>](https://github.com/observablehq/array/blob/master/src/top.js "Source")
 
-…
+Returns the index of the specified *values* array with the corresponding greatest value according to the specified *order* comparator.
 
-<a href="#topi" name="topi">#</a> <b>topi</b>(<i>values</i>, <i>index</i>) [<>](https://github.com/observablehq/array/blob/master/src/topi.js "Source")
+```js
+top(["f", "e", "d", "i", "g", "c", "h", "a", "b", "j"]) // 9
+```
 
-…
+<a href="#topi" name="topi">#</a> <b>topi</b>(<i>values</i>, <i>index</i>, <i>order</i> = [ascending](#ascending)) [<>](https://github.com/observablehq/array/blob/master/src/topi.js "Source")
+
+Returns the index in the specified *index* array with the corresponding greatest value in the specified *values* array according to the specified *order* comparator. Equivalent to [top](#top)([take](#take)(*values*, *index*), *order*).
+
+```js
+topi(["f", "e", "d", "i", "g", "c", "h", "a", "b", "j"], [0, 2, 4, 6]) // 6
+```
 
 <a href="#tops" name="tops">#</a> <b>tops</b>(<i>values</i>, <i>k</i> = 5, <i>order</i> = [ascending](#ascending)) [<>](https://github.com/observablehq/array/blob/master/src/tops.js "Source")
 
