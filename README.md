@@ -6,13 +6,13 @@ https://beta.observablehq.com/@mbostock/manipulating-flat-arrays
 
 ## Installing
 
-Via npm:
+Via [npm](https://www.npmjs.com/package/@observablehq/array):
 
 ```js
 npm install @observablehq/array
 ```
 
-Via import:
+Via import from [unpkg](https://unpkg.com/@observablehq/array/):
 
 ```html
 <script type="module">
@@ -22,7 +22,7 @@ import {take} from "https://unpkg.com/@observablehq/array?module";
 </script>
 ```
 
-Via script tag:
+Via script tag from [unpkg](https://unpkg.com/@observablehq/array/):
 
 ```html
 <script src="https://unpkg.com/@observablehq/array"></script>
