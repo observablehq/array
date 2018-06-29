@@ -1,6 +1,6 @@
 # @observablehq/array
 
-This library provides methods for operating on columnar data (parallel arrays). Most operations involve computing an index—an array of integers, each in [0, *length* - 1]—and then using the index to derive new columns.
+This library provides methods for operating on columnar data represented as parallel arrays. Most operations involve computing an index—an array of integers, each in [0, *length* - 1]—and then using the index to derive new columns.
 
 https://beta.observablehq.com/@mbostock/manipulating-flat-arrays
 
@@ -10,7 +10,7 @@ https://beta.observablehq.com/@mbostock/manipulating-flat-arrays
 
 <a href="#take" name="take">#</a> <b>take</b>(<i>values</i>, <i>index</i>) [<>](https://github.com/observablehq/array/blob/master/src/take.js "Source")
 
-Returns a new array of elements from the specified *values* array according to the specified *index* array. The returned array is the same type as the specified *values* array.
+Returns a new array of values from the specified *values* array according to the specified *index* array. The returned array is the same type as the specified *values* array.
 
 ```js
 take(["a", "b", "c", "d", "e", "f"], [0, 2, 0, 1]) // ["a", "c", "a", "b"]
@@ -18,7 +18,7 @@ take(["a", "b", "c", "d", "e", "f"], [0, 2, 0, 1]) // ["a", "c", "a", "b"]
 
 <a href="#taker" name="taker">#</a> <b>taker</b>(<i>index</i>) [<>](https://github.com/observablehq/array/blob/master/src/taker.js "Source")
 
-Returns a [take](#take)-like function that, when passed an array of *values*, returns a new array of elements from the specified *values* array according to the specified *index* array. The returned array is the same type as the specified *values* array.
+Returns a [take](#take)-like function that, when passed an array of *values*, returns a new array of values from the specified *values* array according to the specified *index* array. The returned array is the same type as the specified *values* array.
 
 ```js
 taker([0, 2, 0, 1])(["a", "b", "c", "d", "e", "f"]) // ["a", "c", "a", "b"]
@@ -38,7 +38,7 @@ name = ["Ay", "Bee", "Cee", "Dee", "Ee", "Ef", "Gee"]
 
 <a href="#get" name="get">#</a> <b>get</b>(<i>i</i>) [<>](https://github.com/observablehq/array/blob/master/src/get.js "Source")
 
-Returns a [take](#take)-like function that, when passed an array of *values*, returns the element from the specified *values* array with the specified index *i*.
+Returns a [take](#take)-like function that, when passed an array of *values*, returns the value from the specified *values* array with the specified index *i*.
 
 ```js
 get(2)(["a", "b", "c", "d", "e", "f"]) // "c"
@@ -312,7 +312,20 @@ filteri(["Ay", "Bee", "Cee", "Dee", "Ee", "Ef", "Gee"], [0, 1, 2, 3], d => d.len
 
 <a href="#group" name="group">#</a> <b>group</b>(<i>keys</i>[, <i>value</i>]) [<>](https://github.com/observablehq/array/blob/master/src/group.js "Source")
 
-…
+Returns a new Map where the keys of the map are the unique elements of the specified *keys* array and the corresponding value is the array of indexes into the specified *keys* array.
+
+```js
+name = ["Ay", "Bee", "Cee", "Dee", "Ee", "Ef", "Gee"]
+```
+```js
+group(name.map(d => d.length)) // {2 => [0, 4, 5], 3 => [1, 2, 3, 6]}
+```
+
+If a *value* function is specified, it is invoked for each entry in the returned map, and the returned map’s value is replaced by whatever the *value* function returns.
+
+```js
+group(name.map(d => d.length), i => take(name, i)) // {2 => ["Ay", "Ee", "Ef"], 3 => ["Bee", "Cee", "Dee", "Gee"]}
+```
 
 ### Comparing
 
