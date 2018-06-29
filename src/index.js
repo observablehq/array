@@ -20,6 +20,8 @@ export {default as quantile} from "./quantile.js";
 export {default as quantilei} from "./quantilei.js";
 export {default as range} from "./range.js";
 export {default as reverse} from "./reverse.js";
+export {default as shuffle} from "./shuffle.js";
+export {default as shufflei} from "./shufflei.js";
 export {default as slice} from "./slice.js";
 export {default as sort} from "./sort.js";
 export {default as sorti} from "./sorti.js";
