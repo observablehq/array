@@ -1,13 +1,21 @@
-export default function group(keys, value) {
+import identity from "./identity.js";
+
+export default function group(values, key = identity, value) {
   const map = new Map;
-  for (let i = 0, n = keys.length; i < n; ++i) {
-    let k = keys[i], v = map.get(k);
-    if (v === undefined) map.set(k, [i]);
-    else v.push(i);
-  }
-  if (value !== undefined) {
-    for (const [key, index] of map) {
-      map.set(key, value(index));
+  if (value === undefined) {
+    for (let i = 0, n = values.length; i < n; ++i) {
+      let v = values[i], k = key(v, i, values), g = map.get(k);
+      if (g === undefined) map.set(k, [v]);
+      else g.push(v);
+    }
+  } else {
+    for (let i = 0, n = values.length; i < n; ++i) {
+      let k = key(values[i], i, values), g = map.get(k);
+      if (g === undefined) map.set(k, [i]);
+      else g.push(i);
+    }
+    for (const [k, g] of map) {
+      map.set(k, value(g));
     }
   }
   return map;

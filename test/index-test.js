@@ -15,6 +15,7 @@ tape("@observablehq/array exports the expected symbols", test => {
     "filteri",
     "get",
     "group",
+    "identity",
     "max",
     "maxi",
     "mean",

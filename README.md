@@ -274,10 +274,6 @@ topsi(["f", "e", "d", "i", "g", "c", "h", "a", "b", "j"], [0, 2, 4, 6], 2) // [6
 
 ### Arranging
 
-<a href="#range" name="range">#</a> <b>range</b>([<i>start</i>, ]<i>stop</i>[, <i>step</i>]]) [<>](https://github.com/observablehq/array/blob/master/src/range.js "Source")
-
-Returns an array of integers starting at the specified inclusive *start* value and stopping before the specified exclusive *stop* value. If a *start* value is not specified, it defaults to zero; if a *step* value is not specified, it defaults to 1.
-
 <a href="#reverse" name="reverse">#</a> <b>reverse</b>(<i>values</i>) [<>](https://github.com/observablehq/array/blob/master/src/reverse.js "Source")
 
 Returns a reversed copy of the specified *values* array. Like [*array*.reverse](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array/slice), but returns a copy.
@@ -310,24 +306,27 @@ filteri(["Ay", "Bee", "Cee", "Dee", "Ee", "Ef", "Gee"], [0, 1, 2, 3], d => d.len
 
 ### Grouping
 
-<a href="#group" name="group">#</a> <b>group</b>(<i>keys</i>[, <i>value</i>]) [<>](https://github.com/observablehq/array/blob/master/src/group.js "Source")
+<a href="#group" name="group">#</a> <b>group</b>(<i>values</i>, <i>key</i> = [identity](#identity)[, <i>value</i>]) [<>](https://github.com/observablehq/array/blob/master/src/group.js "Source")
 
-Returns a new Map where the keys of the map are the unique elements of the specified *keys* array and the corresponding value is the array of indexes into the specified *keys* array.
+Returns a new Map where the keys of the map are computed by applying the specified *key* function to each element in the specified *values* array.
 
 ```js
 name = ["Ay", "Bee", "Cee", "Dee", "Ee", "Ef", "Gee"]
 ```
 ```js
-group(name.map(d => d.length)) // {2 => [0, 4, 5], 3 => [1, 2, 3, 6]}
+group(name, d => d.length) // {2 => ["Ay", "Ee", "Ef"], 3 => ["Bee", "Cee", "Dee", "Gee"]}
 ```
 
-If a *value* function is specified, it is invoked for each entry in the returned map, and the returned map’s value is replaced by whatever the *value* function returns.
+If a *value* function is specified, it is invoked with the array of indexes for each entry in the returned map, and the returned map’s value is replaced by whatever the *value* function returns.
 
 ```js
-group(name.map(d => d.length), i => take(name, i)) // {2 => ["Ay", "Ee", "Ef"], 3 => ["Bee", "Cee", "Dee", "Gee"]}
+letter = ["a", "b", "c", "d", "e", "f", "g"]
 ```
 ```js
-group(name.map(d => d.length), i => i.length) // {2 => 3, 3 => 4}
+group(name, d => d.length, i => take(letter, i)) // {2 => ["a", "e", "f"], 3 => ["b", "c", "d", "g"]}
+```
+```js
+group(name, d => d.length, i => i.length) // {2 => 3, 3 => 4}
 ```
 
 ### Comparing
@@ -341,3 +340,13 @@ Returns -1 if *a* is less than *b*, 1 if *a* is greater than *b*, 0 if *a* is eq
 <a href="#descending" name="descending">#</a> <b>descending</b>(<i>a</i>, <i>b</i>) [<>](https://github.com/observablehq/array/blob/master/src/descending.js "Source")
 
 Returns -1 if *b* is less than *a*, 1 if *b* is greater than *a*, 0 if *b* is equal to *a*, or NaN.
+
+### Other
+
+<a href="#identity" name="identity">#</a> <b>identity</b>(<i>x</i>) [<>](https://github.com/observablehq/array/blob/master/src/identity.js "Source")
+
+Returns *x*.
+
+<a href="#range" name="range">#</a> <b>range</b>([<i>start</i>, ]<i>stop</i>[, <i>step</i>]]) [<>](https://github.com/observablehq/array/blob/master/src/range.js "Source")
+
+Returns an array of integers starting at the specified inclusive *start* value and stopping before the specified exclusive *stop* value. If a *start* value is not specified, it defaults to zero; if a *step* value is not specified, it defaults to 1.
