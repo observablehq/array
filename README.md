@@ -24,19 +24,35 @@ counti([1, "N/A", 2, NaN, 3], [0, 1, 2]) // 2
 
 <a href="#max" name="max">#</a> <b>max</b>(<i>values</i>) [<>](https://github.com/observablehq/array/blob/master/src/max.js "Source")
 
-…
+Returns the maximum numeric value in the specified *values* array. For the corresponding index, see [top](#top).
+
+```js
+max([1, "N/A", 2, NaN, 4.5]) // 4.5
+```
 
 <a href="#maxi" name="maxi">#</a> <b>maxi</b>(<i>values</i>, <i>index</i>) [<>](https://github.com/observablehq/array/blob/master/src/maxi.js "Source")
 
-…
+Returns the maximum numeric value in the subset of the specified *values* array in the specified *index* array. For the corresponding index, see [topi](#topi).
+
+```js
+maxi([1, "N/A", 2.5, NaN, 4], [0, 1, 2]) // 2
+```
 
 <a href="#min" name="min">#</a> <b>min</b>(<i>values</i>) [<>](https://github.com/observablehq/array/blob/master/src/min.js "Source")
 
-…
+Returns the minimum numeric value in the specified *values* array. For the corresponding index, see [bottom](#bottom).
+
+```js
+min([1, "N/A", 2, NaN, 4.5]) // 1
+```
 
 <a href="#mini" name="mini">#</a> <b>mini</b>(<i>values</i>, <i>index</i>) [<>](https://github.com/observablehq/array/blob/master/src/mini.js "Source")
 
-…
+Returns the minimum numeric value in the subset of the specified *values* array in the specified *index* array. For the corresponding index, see [bottomi](#bottomi).
+
+```js
+mini([1.5, "N/A", 2, NaN, 4], [0, 1, 2]) // 1.5
+```
 
 <a href="#mean" name="mean">#</a> <b>mean</b>(<i>values</i>) [<>](https://github.com/observablehq/array/blob/master/src/mean.js "Source")
 
