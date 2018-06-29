@@ -1,7 +1,7 @@
 {
   "name": "@observablehq/array",
   "version": "0.0.0",
-  "description": "Manipulate arrays.",
+  "description": "Manipulate typed arrays.",
   "keywords": [
     "array",
     "columnar"
