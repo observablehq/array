@@ -12,38 +12,38 @@ function config(options) {
 
 export default [
   config({
-  	plugins: [
+    plugins: [
       terser({
         toplevel: true,
         output: {
-        	preamble: copyright
+          preamble: copyright
         }
       })
     ],
     output: {
-	    format: "es",
-	    file: "dist/array.es.js"
+      format: "es",
+      file: "dist/array.es.js"
     }
   }),
   config({
-  	output: {
-  		banner: copyright,
-	    format: "cjs",
-	    file: "dist/array.cjs.js"
-  	}
+    output: {
+      banner: copyright,
+      format: "cjs",
+      file: "dist/array.cjs.js"
+    }
   }),
   config({
-  	plugins: [
+    plugins: [
       terser({
         output: {
-        	preamble: copyright
+          preamble: copyright
         }
       })
     ],
     output: {
-	    format: "umd",
-	    name: "O_array",
-	    file: "dist/array.umd.js"
+      format: "umd",
+      name: "O_array",
+      file: "dist/array.umd.js"
     }
   })
 ];
