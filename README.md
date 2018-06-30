@@ -128,7 +128,7 @@ max([1, "N/A", 2, NaN, 4.5]) // 4.5
 
 <a href="#maxi" name="maxi">#</a> <b>maxi</b>(<i>values</i>, <i>index</i>) [<>](https://github.com/observablehq/array/blob/master/src/maxi.js "Source")
 
-Returns the maximum numeric value in the subset of the specified *values* array in the specified *index* array. For the corresponding index, see [topi](#topi).
+Returns the maximum numeric value in the subset of the specified *values* array in the specified *index* array. Equivalent to [max](#max)([take](#take)(*values*, *index*)). For the corresponding index, see [topi](#topi).
 
 ```js
 maxi([1, "N/A", 2.5, NaN, 4], [0, 1, 2]) // 2
@@ -144,7 +144,7 @@ min([1, "N/A", 2, NaN, 4.5]) // 1
 
 <a href="#mini" name="mini">#</a> <b>mini</b>(<i>values</i>, <i>index</i>) [<>](https://github.com/observablehq/array/blob/master/src/mini.js "Source")
 
-Returns the minimum numeric value in the subset of the specified *values* array in the specified *index* array. For the corresponding index, see [bottomi](#bottomi).
+Returns the minimum numeric value in the subset of the specified *values* array in the specified *index* array. Equivalent to [min](#min)([take](#take)(*values*, *index*)).For the corresponding index, see [bottomi](#bottomi).
 
 ```js
 mini([1.5, "N/A", 2, NaN, 4], [0, 1, 2]) // 1.5
