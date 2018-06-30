@@ -226,7 +226,7 @@ bottom(["f", "e", "d", "i", "g", "c", "h", "a", "b", "j"]) // 7
 
 <a href="#bottomi" name="bottomi">#</a> <b>bottomi</b>(<i>values</i>, <i>index</i>, <i>order</i> = [ascending](#ascending)) [<>](https://github.com/observablehq/array/blob/master/src/bottomi.js "Source")
 
-Returns the index in the specified *index* array with the corresponding least value in the specified *values* array according to the specified *order* comparator. Equivalent to [bottom](#bottom)([take](#take)(*values*, *index*), *order*).
+Returns the index in the specified *index* array with the corresponding least value in the specified *values* array according to the specified *order* comparator.
 
 ```js
 bottomi(["f", "e", "d", "i", "g", "c", "h", "a", "b", "j"], [0, 2, 4, 6]) // 2
@@ -242,7 +242,7 @@ bottoms(["f", "e", "d", "i", "g", "c", "h", "a", "b", "j"], 3) // [7, 8, 5]
 
 <a href="#bottomsi" name="bottomsi">#</a> <b>bottomsi</b>(<i>values</i>, <i>index</i>, <i>k</i> = 5, <i>order</i> = [ascending](#ascending)) [<>](https://github.com/observablehq/array/blob/master/src/bottomsi.js "Source")
 
-Returns an array of the *k* indexes in the specified *index* array with the corresponding least values in the specified *values* array according to the specified *order* comparator. Equivalent to [bottoms](#bottoms)([take](#take)(*values*, *index*), *k*, *order*).
+Returns an array of the *k* indexes in the specified *index* array with the corresponding least values in the specified *values* array according to the specified *order* comparator.
 
 ```js
 bottomsi(["f", "e", "d", "i", "g", "c", "h", "a", "b", "j"], [0, 2, 4, 6], 2) // [2, 0]
@@ -274,7 +274,7 @@ top(["f", "e", "d", "i", "g", "c", "h", "a", "b", "j"]) // 9
 
 <a href="#topi" name="topi">#</a> <b>topi</b>(<i>values</i>, <i>index</i>, <i>order</i> = [ascending](#ascending)) [<>](https://github.com/observablehq/array/blob/master/src/topi.js "Source")
 
-Returns the index in the specified *index* array with the corresponding greatest value in the specified *values* array according to the specified *order* comparator. Equivalent to [top](#top)([take](#take)(*values*, *index*), *order*).
+Returns the index in the specified *index* array with the corresponding greatest value in the specified *values* array according to the specified *order* comparator.
 
 ```js
 topi(["f", "e", "d", "i", "g", "c", "h", "a", "b", "j"], [0, 2, 4, 6]) // 6
@@ -290,7 +290,7 @@ tops(["f", "e", "d", "i", "g", "c", "h", "a", "b", "j"], 3) // [9, 3, 6]
 
 <a href="#topsi" name="topsi">#</a> <b>topsi</b>(<i>values</i>, <i>index</i>, <i>k</i> = 5, <i>order</i> = [ascending](#ascending)) [<>](https://github.com/observablehq/array/blob/master/src/topsi.js "Source")
 
-Returns an array of the *k* indexes in the specified *index* array with the corresponding greatest values in the specified *values* array according to the specified *order* comparator. Equivalent to [top](#top)([take](#take)(*values*, *index*), *k*, *order*).
+Returns an array of the *k* indexes in the specified *index* array with the corresponding greatest values in the specified *values* array according to the specified *order* comparator.
 
 ```js
 topsi(["f", "e", "d", "i", "g", "c", "h", "a", "b", "j"], [0, 2, 4, 6], 2) // [6, 4]
